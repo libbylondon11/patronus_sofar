@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="patApp">
+  <head>
+    <meta charset="utf-8">
+    <title>The People and the Patronuses</title>
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="assets/scripts/client.min.js"></script>
+  </head>
+  <body>
+
+    <div ng-controller="TheController as the">
+      <div class="enterPeople">
+        <label>First Name:</label>
+        <input type="text" ng-model="the.first_name">
+        <br>
+        <label>Last Name:</label>
+        <input type="text" ng-model="the.last_name">
+        <br>
+        <button ng-click="the.sendDataPeople()">Submit Name</button>
+      </div>
+      <div ng-repeat='people in the.anArray'>
+      {{people.first_name}}
+      {{people.last_name}}
+    </div>
+    </div>
+
+    <div ng-controller="OtherController as other">
+      <div class="enterPatronus">
+        <label>Patronus</label>
+        <input type="text" ng-model="other.patronus_name">
+        <br>
+        <button ng-click="other.sendDataPatronus()">Submit Patronus</button>
+      </div>
+      <div ng-repeat='array in other.anotherArray'>
+      {{array.patronus_name}}
+    </div>
+    </div>
+
+  </body>
+</html>
