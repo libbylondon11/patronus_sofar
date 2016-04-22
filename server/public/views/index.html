@@ -11,18 +11,20 @@
     <div ng-controller="TheController as the">
       <div class="enterPeople">
         <label>First Name:</label>
-        <input type="text" ng-model="the.first_name">
+        <input type="text" ng-model="the.first_name"/>
         <br>
         <label>Last Name:</label>
-        <input type="text" ng-model="the.last_name">
+        <input type="text" ng-model="the.last_name"/>
         <br>
         <button ng-click="the.sendDataPeople()">Submit Name</button>
+      </div><br>
+      <div ng-repeat="peopleArray in the.peopleArray">
+        Name:
+      {{peopleArray.first_name}}
+      {{peopleArray.last_name}}
       </div>
-      <div ng-repeat='people in the.anArray'>
-      {{people.first_name}}
-      {{people.last_name}}
-    </div>
-    </div>
+    </div><br><br>
+
 
     <div ng-controller="OtherController as other">
       <div class="enterPatronus">
@@ -31,10 +33,11 @@
         <br>
         <button ng-click="other.sendDataPatronus()">Submit Patronus</button>
       </div>
-      <div ng-repeat='array in other.anotherArray'>
-      {{array.patronus_name}}
+      <div ng-repeat="anotherArray in other.anotherArray">
+        patronus name:
+        {{anotherArray.patronus_name}}
+      </div>
+  </div>
     </div>
-    </div>
-
-  </body>
+</body>
 </html>
